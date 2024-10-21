@@ -37,8 +37,7 @@ const LoginFrom = () => {
       async function onsubmit( data: UserLogin) {
         try{
           const res = await login(data) ;
-        localStorage.setItem("accessToken",res.headers['authorization']  ) ; 
-        navigate("/home") ;
+        //navigate("/home") ;
       }catch(err){
         console.log(err) ; 
       }
@@ -83,6 +82,8 @@ export default LoginFrom;
 
 const login = async (data :UserLogin)=>{
   const res = await axios.post("http://localhost:3001/users/auth" , data ,{withCredentials:true} ) ; 
+  console.log(res.data , typeof res.data)
+  localStorage.setItem("accessToken" , res.data)
   return res ; 
 }
 
