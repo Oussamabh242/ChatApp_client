@@ -115,7 +115,7 @@ const SignupForm = () => {
 export default SignupForm;
 
 const signup = async (data :UserSignup ) => {
-  const res = await axios.post("http://localhost:3001/users" , 
+  const res = await axios.post("http://localhost:3001/user" , 
     data 
   ) ; 
   return res ; 

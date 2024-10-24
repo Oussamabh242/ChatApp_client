@@ -81,9 +81,9 @@ const LoginFrom = () => {
 export default LoginFrom;
 
 const login = async (data :UserLogin)=>{
-  const res = await axios.post("http://localhost:3001/users/auth" , data ,{withCredentials:true} ) ; 
+  const res = await axios.post("http://localhost:3001/auth/login" , data ,{withCredentials:true} ) ; 
   console.log(res.data , typeof res.data)
-  localStorage.setItem("accessToken" , res.data)
+  localStorage.setItem("accessToken" , res.data.access_token)
   return res ; 
 }
 
