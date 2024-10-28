@@ -1,13 +1,13 @@
-import Reqeusts from './components/Requests';
 import SideBar from './components/SideBar';
+import Friends from './components/Friends';
 
-const Home = () => {
+const FriendsPage = () => {
   return (
     <div className="flex">
       <SideBar />
-      <Reqeusts />
+      <Friends />
     </div>
   );
 };
 
-export default Home;
+export default FriendsPage;
