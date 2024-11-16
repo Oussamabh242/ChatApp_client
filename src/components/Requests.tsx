@@ -9,9 +9,12 @@ const Reqeusts = () => {
 
   let [id, setId] = useState('');
   const handleInputChange = async (e: any) => {
-    setId(e.target.value);
-    const res = await searchUsers(id);
-    setUsers(res);
+    const value = e.target.value;
+    setId(value);
+    if (value.trim() != '') {
+      const res = await searchUsers(value);
+      setUsers(res);
+    }
   };
 
   useEffect(() => {

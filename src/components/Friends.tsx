@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 axios.defaults.withCredentials = true;
 
 const Friends = () => {
+  const navigate = useNavigate();
   let [friends, setFriends] = useState([]);
 
   useEffect(() => {
@@ -13,15 +15,21 @@ const Friends = () => {
     })();
   }, []);
 
+  const gotochat = (id: string) => {
+    navigate(`/chat/${id}`);
+  };
+
   return (
     <div className="flex-grow flex items-center justify-center">
-      {friends.map((elm: any) => (
-        <div key={elm.friendID}>
-          <h2 className="text-xl">{elm.fullName}</h2>
-          <button>Chat</button>
-          <br />
-        </div>
-      ))}
+      <div className="friendsList">
+        {friends.map((elm: any) => (
+          <div key={elm.friendID} id={elm.friendID}>
+            <h2 className="text-xl">{elm.fullName}</h2>
+            <button onClick={() => gotochat(elm.friendID)}>Chat</button>
+            <br />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

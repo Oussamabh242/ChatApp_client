@@ -8,6 +8,8 @@ import { toast } from 'sonner';
 import RequestPage from './RequestPage.tsx';
 
 import FriendsPage from './FriendsPage.tsx';
+import ChatPage from './ChatPage.tsx';
+import axios from 'axios';
 
 function App() {
   //   let [result ,setResult] = useState<RecordModel[] | null>(null)  ;
@@ -32,8 +34,8 @@ function App() {
         <Route path="/auth" element={<Auth />} />
         <Route path="/home" element={<Home />} />
         <Route path="/requests" element={<RequestPage />} />
-
         <Route path="/friends" element={<FriendsPage />} />
+        <Route path="/chat/:id" element={<ChatPage />} />
       </Routes>
 
       {/* <button><Link to="/auth">hello world</Link></button> */}
