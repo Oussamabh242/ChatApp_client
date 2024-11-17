@@ -23,12 +23,7 @@ function App() {
   // }, []) ;
   return (
     <div className="App">
-      {/* <div>
       <Toaster />
-      <button onClick={() => toast('My first toast')}>
-        Give me a toast
-      </button>
-    </div>  */}
 
       <Routes>
         <Route path="/auth" element={<Auth />} />
