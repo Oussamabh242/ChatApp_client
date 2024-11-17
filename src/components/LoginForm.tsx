@@ -37,6 +37,9 @@ const LoginFrom = () => {
   async function onsubmit(data: UserLogin) {
     try {
       const res = await login(data);
+      if (res.status == 201) {
+        navigate('/home');
+      }
       //navigate("/home") ;
     } catch (err) {
       console.log(err);

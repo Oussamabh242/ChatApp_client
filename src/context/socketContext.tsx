@@ -49,9 +49,9 @@ export const SocketProvider: React.FC = ({ children }) => {
     setSocket(socketInstance);
 
     // Cleanup when the component unmounts
-    return () => {
-      socketInstance.disconnect();
-    };
+    //return () => {
+    //  socketInstance.disconnect();
+    //};
   }, []);
 
   return (

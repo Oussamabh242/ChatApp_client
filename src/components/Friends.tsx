@@ -25,7 +25,12 @@ const Friends = () => {
         {friends.map((elm: any) => (
           <div key={elm.friendID} id={elm.friendID}>
             <h2 className="text-xl">{elm.fullName}</h2>
-            <button onClick={() => gotochat(elm.friendID)}>Chat</button>
+            {elm.online ? (
+              <p className="text-green-600">online</p>
+            ) : (
+              <p className="text-red-600">offline</p>
+            )}
+            <button onClick={() => gotochat(elm.chat)}>Chat</button>
             <br />
           </div>
         ))}

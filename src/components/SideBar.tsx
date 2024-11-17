@@ -1,7 +1,7 @@
 import { BiSolidMessageRounded } from 'react-icons/bi';
 import { FaUserFriends } from 'react-icons/fa';
 import { FaUser } from 'react-icons/fa';
-
+import { Link } from 'react-router-dom';
 const SideBar = () => {
   const style = { fontSize: '3em', color: '#1f2937' };
   return (
@@ -10,12 +10,18 @@ const SideBar = () => {
         <li className="hover:bg-gray-300 active:text-gray-900 transition duration-300 rounded-md">
           <BiSolidMessageRounded style={style} />
         </li>
-        <li className="hover:bg-gray-300 transition duration-300 rounded-md">
+        <Link
+          to="/friends"
+          className="hover:bg-gray-300 transition duration-300 rounded-md"
+        >
           <FaUserFriends style={style} />
-        </li>
-        <li className="hover:bg-gray-300 transition duration-300 rounded-md">
+        </Link>
+        <Link
+          to="/home"
+          className="hover:bg-gray-300 transition duration-300 rounded-md"
+        >
           <FaUser style={style} />
-        </li>
+        </Link>
       </ul>
     </div>
   );
